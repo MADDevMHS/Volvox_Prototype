@@ -17,12 +17,13 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        self.backgroundColor = SKColor.blackColor()
+        self.backgroundColor = SKColor.whiteColor()
         self.name = "backGround"
         
         //Adding elements
         
         startGame()
+        createParticlesBackGround()
         
         
         
@@ -76,7 +77,7 @@ class GameScene: SKScene {
             
                 let volvox = nodeAtPoint(touch.locationInNode(self))
             
-                if(volvox.name == "backGround"){
+                if((volvox.name == "backGround") || (volvox.name == "particles")){
                 
                     startGame()
                 
@@ -108,8 +109,10 @@ class GameScene: SKScene {
         
         let circle1:SKSpriteNode = SKSpriteNode(imageNamed: "Volvox_0")
         circle1.size = CGSizeMake(self.frame.size.width * 0.3, self.frame.size.width * 0.3)
-        circle1.position = CGPointMake((randomValueBetween(0, high: self.frame.size.width)), (randomValueBetween(0, high: self.frame.size.height)) )
+        
+        circle1.position = CGPointMake((randomInt(0, max: self.frame.size.width)),(randomInt(0, max: self.frame.size.height)))
         circle1.name = "name"
+        circle1.zPosition = 1
         self.addChild(circle1)
         
         let appearAnimation:SKAction = SKAction.scaleXBy(1.4, y: 1.4, duration: 0.007)
@@ -126,24 +129,37 @@ class GameScene: SKScene {
         
     }
     
+    func createParticlesBackGround(){
+        
+        //Particles
+        let particles:SKEmitterNode = SKEmitterNode(fileNamed: "Magic.sks")!
+        particles.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        particles.zPosition = 0
+        particles.name = "particles"
+        self.addChild(particles)
+        
+    }
+    
     
     override func update(currentTime: CFTimeInterval) {
         
         if(gameStarted == true){
          
             for node in self.children  {
+                
+                if(node.isKindOfClass(SKSpriteNode)){
             
-                let spritenode = node as! SKSpriteNode
+                    let spritenode = node as! SKSpriteNode
                 
-                if((spritenode.size.width == 0) && (spritenode.size.height == 0)){
+                    if((spritenode.size.width == 0) && (spritenode.size.height == 0)){
                 
-                    spritenode.removeFromParent()
-                    gameStarted = false
+                        spritenode.removeFromParent()
+                        gameStarted = false
                 
+                    }
+                    
                 }
-            
         
-            
             }
             
         }
@@ -152,12 +168,15 @@ class GameScene: SKScene {
     
     //Random float Value Generator
     
-    func randomValueBetween(low:CGFloat, high:CGFloat) ->CGFloat {
+    /*func randomValueBetween(low:CGFloat, high:CGFloat) ->CGFloat {
         
         return (((CGFloat)(arc4random()) / 0xFFFFFFFF) * (high - low)) + low
         
-    }
+    }*/
 
+    func randomInt(min: CGFloat, max:CGFloat) -> CGFloat {
+        return min + CGFloat(arc4random_uniform(UInt32(max - min + 1)))
+    }
     
 
   
