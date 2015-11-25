@@ -15,9 +15,14 @@
 		9D7508961B8F98DB00EE8867 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D7508951B8F98DB00EE8867 /* Images.xcassets */; };
 		9D7508991B8F98DB00EE8867 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D7508971B8F98DB00EE8867 /* LaunchScreen.xib */; };
 		9D7508A51B8F98DB00EE8867 /* Volvox_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7508A41B8F98DB00EE8867 /* Volvox_0Tests.swift */; };
-		9DE978571BAED68400C347F0 /* Volvox_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE978561BAED68400C347F0 /* Volvox_0.png */; settings = {ASSET_TAGS = (); }; };
-		9DF87D001BB07AE00018B485 /* Magic.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9DF87CFF1BB07AE00018B485 /* Magic.sks */; settings = {ASSET_TAGS = (); }; };
-		9DF87D041BB07DBA0018B485 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF87D021BB07DBA0018B485 /* spark.png */; settings = {ASSET_TAGS = (); }; };
+		9DE6EBD31C063FC200DFD9C0 /* volvoxBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE6EBCE1C063FC200DFD9C0 /* volvoxBlue.png */; };
+		9DE6EBD41C063FC200DFD9C0 /* volvoxGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE6EBCF1C063FC200DFD9C0 /* volvoxGreen.png */; };
+		9DE6EBD51C063FC200DFD9C0 /* volvoxOrange.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE6EBD01C063FC200DFD9C0 /* volvoxOrange.png */; };
+		9DE6EBD61C063FC200DFD9C0 /* volvoxPink.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE6EBD11C063FC200DFD9C0 /* volvoxPink.png */; };
+		9DE6EBD71C063FC200DFD9C0 /* volvoxPurple.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE6EBD21C063FC200DFD9C0 /* volvoxPurple.png */; };
+		9DE978571BAED68400C347F0 /* Volvox_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DE978561BAED68400C347F0 /* Volvox_0.png */; };
+		9DF87D001BB07AE00018B485 /* Magic.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9DF87CFF1BB07AE00018B485 /* Magic.sks */; };
+		9DF87D041BB07DBA0018B485 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DF87D021BB07DBA0018B485 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,11 @@
 		9D75089E1B8F98DB00EE8867 /* Volvox_0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Volvox_0Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D7508A31B8F98DB00EE8867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D7508A41B8F98DB00EE8867 /* Volvox_0Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volvox_0Tests.swift; sourceTree = "<group>"; };
+		9DE6EBCE1C063FC200DFD9C0 /* volvoxBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volvoxBlue.png; sourceTree = "<group>"; };
+		9DE6EBCF1C063FC200DFD9C0 /* volvoxGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volvoxGreen.png; sourceTree = "<group>"; };
+		9DE6EBD01C063FC200DFD9C0 /* volvoxOrange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volvoxOrange.png; sourceTree = "<group>"; };
+		9DE6EBD11C063FC200DFD9C0 /* volvoxPink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volvoxPink.png; sourceTree = "<group>"; };
+		9DE6EBD21C063FC200DFD9C0 /* volvoxPurple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volvoxPurple.png; sourceTree = "<group>"; };
 		9DE978561BAED68400C347F0 /* Volvox_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Volvox_0.png; sourceTree = "<group>"; };
 		9DF87CFF1BB07AE00018B485 /* Magic.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Magic.sks; sourceTree = "<group>"; };
 		9DF87D021BB07DBA0018B485 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
@@ -94,6 +104,11 @@
 				9DF87D021BB07DBA0018B485 /* spark.png */,
 				9D7508901B8F98DB00EE8867 /* GameViewController.swift */,
 				9DE978561BAED68400C347F0 /* Volvox_0.png */,
+				9DE6EBCE1C063FC200DFD9C0 /* volvoxBlue.png */,
+				9DE6EBCF1C063FC200DFD9C0 /* volvoxGreen.png */,
+				9DE6EBD01C063FC200DFD9C0 /* volvoxOrange.png */,
+				9DE6EBD11C063FC200DFD9C0 /* volvoxPink.png */,
+				9DE6EBD21C063FC200DFD9C0 /* volvoxPurple.png */,
 				9D7508921B8F98DB00EE8867 /* Main.storyboard */,
 				9D7508951B8F98DB00EE8867 /* Images.xcassets */,
 				9D7508971B8F98DB00EE8867 /* LaunchScreen.xib */,
@@ -210,12 +225,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D7508991B8F98DB00EE8867 /* LaunchScreen.xib in Resources */,
+				9DE6EBD71C063FC200DFD9C0 /* volvoxPurple.png in Resources */,
+				9DE6EBD51C063FC200DFD9C0 /* volvoxOrange.png in Resources */,
 				9DF87D001BB07AE00018B485 /* Magic.sks in Resources */,
 				9D7508961B8F98DB00EE8867 /* Images.xcassets in Resources */,
+				9DE6EBD41C063FC200DFD9C0 /* volvoxGreen.png in Resources */,
 				9DE978571BAED68400C347F0 /* Volvox_0.png in Resources */,
 				9DF87D041BB07DBA0018B485 /* spark.png in Resources */,
 				9D75088D1B8F98DB00EE8867 /* GameScene.sks in Resources */,
+				9DE6EBD61C063FC200DFD9C0 /* volvoxPink.png in Resources */,
 				9D7508941B8F98DB00EE8867 /* Main.storyboard in Resources */,
+				9DE6EBD31C063FC200DFD9C0 /* volvoxBlue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

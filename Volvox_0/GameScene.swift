@@ -12,18 +12,22 @@ class GameScene: SKScene {
     
     var gameStarted:Bool = false
     
-    
+    //Score Label
+    var scoreLabel:SKLabelNode = SKLabelNode(text: "0")
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
-        self.backgroundColor = SKColor.whiteColor()
+        //Setting Backgroud Color
+        self.backgroundColor = SKColor.blackColor()
+        //Setting name of the Parent node, which is the background
         self.name = "backGround"
         
         //Adding elements
         
         startGame()
-        createParticlesBackGround()
+        //createParticlesBackGround()
+        createScoreLabel()
         
         
         
@@ -36,6 +40,8 @@ class GameScene: SKScene {
         /* Called when a touch begins */
         
         for touch in (touches ) {
+            
+            //Circile appearing animation
         /*    let location = touch.locationInNode(self)
             
             let circle1:SKSpriteNode = SKSpriteNode(imageNamed: "Volvox_0")
@@ -57,12 +63,17 @@ class GameScene: SKScene {
             
             */
             
+            
+            //When the user touches the screen, this method takes the location of the touch and check if there is any node in that location. 
+            //If there is a node, if gameStarted boolean is true, the circle disappears and creates another cirlce.
             if(nodeAtPoint(touch.locationInNode(self)).isKindOfClass(SKSpriteNode)){
             
                 if(gameStarted == true){
             
+                        //Creates an object volvox of type SkSpriteNode
                         let volvox:SKSpriteNode = nodeAtPoint(touch.locationInNode(self)) as!SKSpriteNode
                 
+                        //
                         if(volvox.name == "name"){
                 
                             volvox.removeFromParent()
@@ -83,11 +94,7 @@ class GameScene: SKScene {
                 
                 }
             }
-            
         }
-        
-        
-    
     }
     
     func startGame(){
@@ -103,11 +110,12 @@ class GameScene: SKScene {
         
     }
     
+    //Creating elements meethods
     
     func createVolvox(){
         
         
-        let circle1:SKSpriteNode = SKSpriteNode(imageNamed: "Volvox_0")
+        let circle1:SKSpriteNode = SKSpriteNode(imageNamed: "volvoxGreen.png")
         circle1.size = CGSizeMake(self.frame.size.width * 0.3, self.frame.size.width * 0.3)
         
         circle1.position = CGPointMake((randomInt(0, max: self.frame.size.width)),(randomInt(0, max: self.frame.size.height)))
@@ -133,10 +141,20 @@ class GameScene: SKScene {
         
         //Particles
         let particles:SKEmitterNode = SKEmitterNode(fileNamed: "Magic.sks")!
-        particles.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
+        particles.position = CGPointMake(self.frame.width * 0.9, self.frame.height * 0.9)
         particles.zPosition = 0
         particles.name = "particles"
         self.addChild(particles)
+        
+    }
+    
+    func createScoreLabel(){
+        
+        //Score Label
+        scoreLabel.fontColor = SKColor.whiteColor()
+        scoreLabel.fontSize = 40
+        scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.frame))
+        self.addChild(scoreLabel)
         
     }
     
