@@ -14,7 +14,6 @@ class GameScene: SKScene {
     
     //Score Label
     var scoreLabel:SKLabelNode = SKLabelNode(text: "0")
-    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
@@ -28,7 +27,6 @@ class GameScene: SKScene {
         startGame()
         //createParticlesBackGround()
         createScoreLabel()
-        
         
         
     }
@@ -84,12 +82,15 @@ class GameScene: SKScene {
                     
                 }
             
-            }else if(gameStarted == false){
+            }
+            
+           //if gameStarted is false then check if the the name of the node is background or particles, and if that is true then run startGame
+            else if(gameStarted == false)  {
             
                 let volvox = nodeAtPoint(touch.locationInNode(self))
             
-                if((volvox.name == "backGround") || (volvox.name == "particles")){
-                
+                if((volvox.name == "backGround") || (volvox.name == "particles"))
+                {
                     startGame()
                 
                 }
@@ -110,15 +111,15 @@ class GameScene: SKScene {
         
     }
     
-    //Creating elements meethods
+    //Creating elements methods
     
     func createVolvox(){
         
         
         let circle1:SKSpriteNode = SKSpriteNode(imageNamed: "volvoxGreen.png")
-        circle1.size = CGSizeMake(self.frame.size.width * 0.3, self.frame.size.width * 0.3)
+        circle1.size = CGSizeMake(self.frame.size.width * 0.3, self.frame.size.width * 0.3) //setting the size of the circle
         
-        circle1.position = CGPointMake((randomInt(0, max: self.frame.size.width)),(randomInt(0, max: self.frame.size.height)))
+        circle1.position = CGPointMake((randomInt(0, max: self.frame.size.width)),(randomInt(0, max: self.frame.size.height))) //setting the coordinate of the circle at random coordinates
         circle1.name = "name"
         circle1.zPosition = 1
         self.addChild(circle1)
@@ -132,14 +133,14 @@ class GameScene: SKScene {
         
         let sequence1:SKAction = SKAction.sequence([sequence,makeSmallAnimation])
         
-        circle1.runAction(sequence1)
+        circle1.runAction(sequence1) //last six lines deal witht he animation sequence of the circle
 
         
     }
     
     func createParticlesBackGround(){
         
-        //Particles
+        //Particles and setting its position
         let particles:SKEmitterNode = SKEmitterNode(fileNamed: "Magic.sks")!
         particles.position = CGPointMake(self.frame.width * 0.9, self.frame.height * 0.9)
         particles.zPosition = 0
@@ -150,13 +151,15 @@ class GameScene: SKScene {
     
     func createScoreLabel(){
         
-        //Score Label
+        //Score Label setting its font color and position
         scoreLabel.fontColor = SKColor.whiteColor()
         scoreLabel.fontSize = 40
-        scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMinY(self.frame))
+        scoreLabel.position = CGPointMake(self.frame.size.width*0.05, self.frame.size.height*0.95)
         self.addChild(scoreLabel)
         
     }
+    
+  
     
     
     override func update(currentTime: CFTimeInterval) {
@@ -165,14 +168,14 @@ class GameScene: SKScene {
          
             for node in self.children  {
                 
-                if(node.isKindOfClass(SKSpriteNode)){
+                if(node.isKindOfClass(SKSpriteNode)) { //checking if node is SKSpriteNode
             
                     let spritenode = node as! SKSpriteNode
                 
                     if((spritenode.size.width == 0) && (spritenode.size.height == 0)){
                 
-                        spritenode.removeFromParent()
-                        gameStarted = false
+                        spritenode.removeFromParent() //if the coordinate of the node is 0, 0 then it will be removed from the parent
+                        gameStarted = false //also gameStarted will be set to false
                 
                     }
                     
@@ -195,8 +198,5 @@ class GameScene: SKScene {
     func randomInt(min: CGFloat, max:CGFloat) -> CGFloat {
         return min + CGFloat(arc4random_uniform(UInt32(max - min + 1)))
     }
-    
-
-  
 }
 
