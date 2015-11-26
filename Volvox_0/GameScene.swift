@@ -119,7 +119,7 @@ class GameScene: SKScene {
         let circle1:SKSpriteNode = SKSpriteNode(imageNamed: "volvoxGreen.png")
         circle1.size = CGSizeMake(self.frame.size.width * 0.3, self.frame.size.width * 0.3) //setting the size of the circle
         
-        circle1.position = CGPointMake((randomInt(0, max: self.frame.size.width)),(randomInt(0, max: self.frame.size.height))) //setting the coordinate of the circle at random coordinates
+        circle1.position = CGPointMake((randomInt(0, max: self.frame.size.width)),(randomInt(0, max: self.frame.size.height))) //setting the coordinates of the circle at random coordinates
         circle1.name = "name"
         circle1.zPosition = 1
         self.addChild(circle1)
