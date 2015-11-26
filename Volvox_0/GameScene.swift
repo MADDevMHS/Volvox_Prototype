@@ -133,7 +133,7 @@ class GameScene: SKScene {
         
         let sequence1:SKAction = SKAction.sequence([sequence,makeSmallAnimation])
         
-        circle1.runAction(sequence1) //last six lines deal witht he animation sequence of the circle
+        circle1.runAction(sequence1) //last six lines deal with the animation sequence of the circle
 
         
     }
